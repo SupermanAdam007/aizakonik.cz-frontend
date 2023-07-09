@@ -6,6 +6,7 @@ export const useAppStore = defineStore("app", {
     loading: false,
     prompt: useStorage("prompt", ""),
     answer: useStorage("answer", ""),
+    sourceDocuments: useStorage("sourceDocuments", []),
     collectionsOfLaws: [
       "Daňový řád",
       "Insolvenční zákon",
@@ -28,17 +29,34 @@ export const useAppStore = defineStore("app", {
       "Zákoník práce",
       "Živnostenský zákon",
     ],
-    selectedCollectionOfLaws: useStorage("selectedCollectionOfLaws", "Daňový řád")
+    selectedCollectionOfLaws: useStorage(
+      "selectedCollectionOfLaws",
+      "Daňový řád"
+    ),
   }),
   actions: {
-    async fetchAnswer() {
-      this.loading = true
+    fetchAnswer() {
+      this.loading = true;
 
-      fetch(`${import.meta.env.VITE_API_HOST}/constants`)
+      return fetch(`${import.meta.env.VITE_API_HOST}/prediction`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          question: this.prompt,
+        }),
+      })
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          this.loading = false
+
+          this.answer = data.result.replaceAll("$", "§");
+          this.sourceDocuments = data.source_documents;
+
+          this.loading = false;
+        })
+        .catch((error) => {
+          console.error(error);
+          this.loading = false;
         });
     },
   },

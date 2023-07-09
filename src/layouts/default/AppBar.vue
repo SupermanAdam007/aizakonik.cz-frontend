@@ -9,11 +9,11 @@
         </v-toolbar-title>
       </router-link>
 
-      <v-spacer v-show="$route.path !== '/'"></v-spacer>
+      <!-- <v-spacer v-show="$route.path !== '/'"></v-spacer> -->
 
-      <v-btn v-show="$route.path !== '/'" icon to="/">
+      <!-- <v-btn v-show="$route.path !== '/'" icon to="/">
         <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+      </v-btn> -->
 
     </v-app-bar>
 

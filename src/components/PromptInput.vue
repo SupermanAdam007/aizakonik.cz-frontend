@@ -4,7 +4,7 @@
       @click:append-inner="onClick" v-on:keyup.enter="onClick" type="text">
     </v-text-field>
 
-    <v-select v-model="selectedCollectionOfLaws" class="mt-2" :items="collectionsOfLaws" label="Vyberte oblast" variant="solo" hide-details></v-select>
+    <!-- <v-select v-model="selectedCollectionOfLaws" class="mt-2" :items="collectionsOfLaws" label="Vyberte oblast" variant="solo" hide-details></v-select> -->
 
   </div>
 </template>

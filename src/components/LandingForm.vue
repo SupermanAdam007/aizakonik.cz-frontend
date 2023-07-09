@@ -13,7 +13,7 @@
 
       <v-row no-gutters class="align-center justify-center mt-4">
         <v-col cols="12">
-          <PromptInput style="max-width: 650px;" class="mx-auto" />
+          <PromptInput style="max-width: 650px;" class="mx-auto mb-10 pb-10" />
         </v-col>
       </v-row>
     </v-responsive>
