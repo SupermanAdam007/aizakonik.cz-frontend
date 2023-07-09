@@ -1,8 +1,8 @@
 <template>
   <div class="mt-n2">
-    <v-text-field v-model="prompt" autofocus class="mt-2" :loading="loading" :rules="urlRules" variant="solo" label="Na co se chcete zeptat?" hide-details append-inner-icon="mdi-magnify"
+    <v-textarea v-model="prompt" autofocus class="mt-2" :loading="loading" :rules="urlRules" variant="solo" label="Na co se chcete zeptat?" hide-details append-inner-icon="mdi-magnify"
       @click:append-inner="onClick" v-on:keyup.enter="onClick" type="text">
-    </v-text-field>
+    </v-textarea>
 
     <!-- <v-select v-model="selectedCollectionOfLaws" class="mt-2" :items="collectionsOfLaws" label="Vyberte oblast" variant="solo" hide-details></v-select> -->
 

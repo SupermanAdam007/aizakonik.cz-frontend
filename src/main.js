@@ -24,7 +24,7 @@ registerPlugins(app)
 
 app.use(VueCookieNext);
 app.use(VueGtag, {
-  config: { id: '' },
+  config: { id: 'G-XPLJPJW8KQ' },
   router,
   enabled: true,
 });
