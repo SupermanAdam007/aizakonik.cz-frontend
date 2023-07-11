@@ -7,7 +7,7 @@
     </v-row>
 
     <!-- <h2>Odpověď</h2> -->
-    <p class="mt-6" style="text-align: justify; word-break: keep-all;">{{ answer }}</p>
+    <p class="mt-6" style="text-align: justify; word-break: keep-all; white-space: pre-wrap;">{{ answer }}</p>
 
     <!-- <h2>Související</h2>
     <p v-for="source in sourceDocumentsFormatted" :key="source">{{ source }}</p> -->
